@@ -8,6 +8,7 @@ function findNavigationEntries(nodes = [], key = "") {
 			if(!key && !nav.parent || nav.parent === key) {
 				pages.push(Object.assign({}, nav, {
 					url: nav.url || entry.data.page.url,
+					tags: entry.data.tags,
 					pluginType: "eleventy-navigation"
 				}, key ? { parentKey: key } : {}));
 			}
